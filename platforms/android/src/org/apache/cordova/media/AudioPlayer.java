@@ -553,6 +553,8 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
 							"Exception while preparing the audio file " + file);
 					e.printStackTrace();
 	
+					/* remove chrome-extension */
+					file = file.replaceAll("chrome-extension://[^/]+/", "");
 					/* try it in the assets folder */
 					file = "www/" + file;
 					try {
